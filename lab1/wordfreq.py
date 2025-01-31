@@ -45,3 +45,27 @@ def tokenize(lines):
 #tokenize(['apple','p1e!'])
 #wordfreq.tokenize(['apple','p1e!'])
 
+
+
+"""
+Initialize a variable with an empty dictionary.
+Start a loop that goes through all words in the list. If the current word appears in the list stopWords then ignore it.
+The first time when you encounter a new word, add it with count 1 to the dictionary. The next time just increment the count with one.
+return the dictionary from the function after you have counted all words.
+Note that you can find whether you have already seen the word by using the operator in in Python. If the variable frequencies refers to the dictionary, then the expression word not in frequencies will evaluate to True only if this is the first time when you have encountered the word.
+
+When you are done, run the test program, to make sure that everything works well.
+"""
+
+def countWords(words, stopWords):
+    frequencies = {}
+    
+    for word in words:
+        
+        if word not in frequencies:
+            frequencies[word] = 1
+        else:
+            frequencies[word] += 1
+    
+    return frequencies
+            
