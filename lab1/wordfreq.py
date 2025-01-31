@@ -1,4 +1,4 @@
-#mport wordfreq
+#import wordfreq
 
 
 def tokenize(lines):
@@ -8,18 +8,18 @@ def tokenize(lines):
         start = 0
         #print(line)
         while start < len(line):
-            while line[start].isspace():
+            if line[start].isspace():
                 start = start+1
                 
 
-            if line[start].isalpha():
+            elif line[start].isalpha():
                     end = start
                     
                     while end < len(line) and line[end].isalpha(): 
                         
                         end = end+1
 
-                    words.append(line[start:end])
+                    words.append(line[start:end].lower())
                         #print(f"{line[start]} is a letter")
                     start = end
 
@@ -35,11 +35,13 @@ def tokenize(lines):
                     start = end
             else:
                     #print(f"{line[start]} is a symbol")
-                    words.append(line[start:end])
+                    words.append(line[start])
                     start = start+1
 
             
     return words
 
-print(tokenize(['apple','p1e!']))
-#wordfreq.tokenize(['apple','pie'])
+#print(tokenize(['Apple','p1e!']))
+#tokenize(['apple','p1e!'])
+#wordfreq.tokenize(['apple','p1e!'])
+
