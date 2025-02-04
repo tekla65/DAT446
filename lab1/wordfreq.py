@@ -69,4 +69,6 @@ def countWords(words, stopWords):
                 frequencies[word] += 1
     
     return frequencies
-      
+
+for word,freq in frequencies.items():
+  print(word,freq)
