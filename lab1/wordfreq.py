@@ -61,11 +61,12 @@ def countWords(words, stopWords):
     frequencies = {}
     
     for word in words:
-        
-        if word not in frequencies:
-            frequencies[word] = 1
-        else:
-            frequencies[word] += 1
+        if not word in stopWords:
+             
+            if word not in frequencies:
+                frequencies[word] = 1
+            else:
+                frequencies[word] += 1
     
     return frequencies
-            
+      
