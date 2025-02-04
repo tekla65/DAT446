@@ -60,7 +60,7 @@ When you are done, run the test program, to make sure that everything works well
 def countWords(words, stopWords):
     frequencies = {}
     
-    for word in words:
+    for word in words: #tar bort stopwords
         if not word in stopWords:
              
             if word not in frequencies:
