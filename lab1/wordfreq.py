@@ -72,7 +72,11 @@ def countWords(words, stopWords):
 
 
 
-def printTopMost(frequencies,n):
-    x=sorted  (frequencies.items(), key=lambda x: -x[1])
+def printTopMost(frequencies,n): 
+    x=sorted  (frequencies.items(), key=lambda x: -x[1]):
+    count=0
     for word,freq in x:
+        if n==count:
+            break
         print(word.ljust(20) + str(freq).ljust(5))
+        count=count+1 #skriver bara ut n antal ord
