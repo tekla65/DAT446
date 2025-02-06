@@ -75,4 +75,4 @@ def countWords(words, stopWords):
 def printTopMost(frequencies,n):
     x=sorted  (frequencies.items(), key=lambda x: -x[1])
     for word,freq in x:
-        print(word,freq)
+        print(word.ljust(20) + str(freq).ljust(5))
